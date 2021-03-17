@@ -10,6 +10,7 @@ namespace Laba2
         public Circle(string name, double radius, 
                       int x, int y, Color color)
         {
+            Title = "Круг";
             Name = name;
             Width = 2 * radius;
             Height = 2 * radius;

@@ -9,6 +9,7 @@ namespace Laba2
     {
         public Square(string name, double side, int x, int y, Color color)
         {
+            Title = "Квадрат";
             Name = name;
             Width = side;
             Height = side;

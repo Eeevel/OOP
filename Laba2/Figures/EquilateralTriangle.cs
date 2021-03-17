@@ -9,12 +9,14 @@ namespace Laba2
     {
         public EquilateralTriangle(string name, double side)
         {
+            Title = "Равносторонний треугольник";
             Name = name;
             Side1 = side;
         }
         public EquilateralTriangle(string name, double width,
                                    int x, int y, Color color)
         {
+            Title = "Равносторонний треугольник";
             Name = name;
             Width = width;
             Height = Math.Sqrt(Math.Pow((width), 2) - Math.Pow((width / 2), 2));

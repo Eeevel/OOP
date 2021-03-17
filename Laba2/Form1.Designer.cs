@@ -53,6 +53,10 @@ namespace Laba2
             this.btnRed = new System.Windows.Forms.Button();
             this.btnWhite = new System.Windows.Forms.Button();
             this.lbError = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.btnDraw = new System.Windows.Forms.Button();
+            this.listBoxFigures = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,16 +66,16 @@ namespace Laba2
             this.picture.BackColor = System.Drawing.Color.White;
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(604, 426);
+            this.picture.Size = new System.Drawing.Size(604, 457);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreate.Location = new System.Drawing.Point(682, 259);
+            this.btnCreate.Location = new System.Drawing.Point(682, 283);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(100, 25);
+            this.btnCreate.Size = new System.Drawing.Size(106, 25);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Создать фигуру";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -98,7 +102,7 @@ namespace Laba2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(622, 41);
+            this.label2.Location = new System.Drawing.Point(622, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 4;
@@ -106,7 +110,7 @@ namespace Laba2
             // 
             // textBoxWidth
             // 
-            this.textBoxWidth.Location = new System.Drawing.Point(682, 38);
+            this.textBoxWidth.Location = new System.Drawing.Point(682, 62);
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(106, 20);
             this.textBoxWidth.TabIndex = 5;
@@ -114,7 +118,7 @@ namespace Laba2
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(622, 67);
+            this.label3.Location = new System.Drawing.Point(622, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 6;
@@ -122,7 +126,7 @@ namespace Laba2
             // 
             // textBoxHeight
             // 
-            this.textBoxHeight.Location = new System.Drawing.Point(682, 64);
+            this.textBoxHeight.Location = new System.Drawing.Point(682, 88);
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(106, 20);
             this.textBoxHeight.TabIndex = 7;
@@ -130,7 +134,7 @@ namespace Laba2
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(622, 146);
+            this.label4.Location = new System.Drawing.Point(622, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 8;
@@ -139,7 +143,7 @@ namespace Laba2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(622, 93);
+            this.label5.Location = new System.Drawing.Point(622, 117);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 13);
             this.label5.TabIndex = 10;
@@ -147,14 +151,14 @@ namespace Laba2
             // 
             // textBoxX
             // 
-            this.textBoxX.Location = new System.Drawing.Point(682, 90);
+            this.textBoxX.Location = new System.Drawing.Point(682, 114);
             this.textBoxX.Name = "textBoxX";
             this.textBoxX.Size = new System.Drawing.Size(106, 20);
             this.textBoxX.TabIndex = 11;
             // 
             // textBoxY
             // 
-            this.textBoxY.Location = new System.Drawing.Point(682, 116);
+            this.textBoxY.Location = new System.Drawing.Point(682, 140);
             this.textBoxY.Name = "textBoxY";
             this.textBoxY.Size = new System.Drawing.Size(106, 20);
             this.textBoxY.TabIndex = 12;
@@ -162,7 +166,7 @@ namespace Laba2
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(622, 119);
+            this.label6.Location = new System.Drawing.Point(622, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 13);
             this.label6.TabIndex = 13;
@@ -179,7 +183,7 @@ namespace Laba2
             this.panel1.Controls.Add(this.btnOrange);
             this.panel1.Controls.Add(this.btnRed);
             this.panel1.Controls.Add(this.btnWhite);
-            this.panel1.Location = new System.Drawing.Point(678, 142);
+            this.panel1.Location = new System.Drawing.Point(678, 166);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(110, 111);
             this.panel1.TabIndex = 14;
@@ -287,16 +291,54 @@ namespace Laba2
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Location = new System.Drawing.Point(625, 424);
+            this.lbError.Location = new System.Drawing.Point(622, 456);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(0, 13);
             this.lbError.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(622, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Имя";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(682, 37);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(106, 20);
+            this.textBoxName.TabIndex = 17;
+            // 
+            // btnDraw
+            // 
+            this.btnDraw.Location = new System.Drawing.Point(682, 314);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(106, 23);
+            this.btnDraw.TabIndex = 18;
+            this.btnDraw.Text = "Нарисовать";
+            this.btnDraw.UseVisualStyleBackColor = true;
+            this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
+            // 
+            // listBoxFigures
+            // 
+            this.listBoxFigures.FormattingEnabled = true;
+            this.listBoxFigures.Location = new System.Drawing.Point(682, 343);
+            this.listBoxFigures.Name = "listBoxFigures";
+            this.listBoxFigures.Size = new System.Drawing.Size(106, 95);
+            this.listBoxFigures.TabIndex = 19;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.Controls.Add(this.listBoxFigures);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label6);
@@ -347,6 +389,10 @@ namespace Laba2
         private System.Windows.Forms.Button btnRed;
         private System.Windows.Forms.Button btnWhite;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Button btnDraw;
+        private System.Windows.Forms.ListBox listBoxFigures;
     }
 }
 

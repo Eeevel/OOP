@@ -12,6 +12,7 @@ namespace Laba2
         public Rectangle(string name, double width, double height, 
                          int x, int y, Color color) 
         {
+            Title = "Прямоугольник";
             Name = name; 
             Width = width;
             Height = height;

@@ -14,6 +14,7 @@ namespace Laba2
         protected Triangle() { }
         public Triangle(string name, double side1, double side2, double side3)
         {
+            Title = "Треугольник";
             Name = name;
             Side1 = side1;
             Side2 = side2;
@@ -22,6 +23,7 @@ namespace Laba2
         public Triangle(string name, double width, double height, 
                         int x, int y, Color color)
         {
+            Title = "Треугольник";
             Name = name;
             Width = width;
             Height = height;

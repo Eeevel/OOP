@@ -12,8 +12,8 @@ namespace Laba2
 {
     public partial class MainForm : Form
     {
-        // Словарь имен фигур и фабрик
-        Dictionary<string, Factory> figures = new Dictionary<string, Factory>
+        // Словарь названий фигур и фабрик
+        Dictionary<string, Factory> factories = new Dictionary<string, Factory>
         {
             ["Прямоугольник"] = new FactoryRectangle(),
             ["Квадрат"] = new FactorySquare(),
@@ -24,6 +24,9 @@ namespace Laba2
         };
 
         Color color;
+
+        // Список для хранения фигур
+        List<Figure> figures = new List<Figure>();
 
         public MainForm()
         {
@@ -46,14 +49,22 @@ namespace Laba2
         {
             try
             {
-                string name = textBoxFigure.Text;
+                string title = textBoxFigure.Text;
+                string name = textBoxName.Text;
                 double width = double.Parse(textBoxWidth.Text);
                 double height = double.Parse(textBoxHeight.Text);
                 int x = int.Parse(textBoxX.Text);
                 int y = int.Parse(textBoxY.Text);
 
-                Figure figure = figures[name].CreateFigure(name, width, height, x, y, color);
-                figures[name].DrawFigure(this, figure);
+                // Создание фигуры
+                Figure figure = factories[title].CreateFigure(name, width, height, x, y, color);
+
+                // Добавление фигуры в список и отображение на экран
+                figures.Add(figure);
+                listBoxFigures.Items.Add(figure.Name);
+                
+
+                //factories[title].DrawFigure(this, figures[figures.Count - 1]);
 
                 lbError.Text = "";
             }
@@ -65,6 +76,24 @@ namespace Laba2
             {
                 lbError.Text = "Введите корректные данные";
             } 
+        }
+
+        // Обработчик нажатия на кнопку "Нарисовать"
+        private void btnDraw_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = listBoxFigures.SelectedIndex;
+                Figure figure = figures[index];
+
+                factories[figure.Title].DrawFigure(this, figure);
+
+                lbError.Text = "";
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                lbError.Text = "Выберите фигуру";
+            }
         }
 
         // Обработчик выбора цвета

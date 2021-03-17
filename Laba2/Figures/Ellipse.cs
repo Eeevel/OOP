@@ -15,6 +15,7 @@ namespace Laba2
                        double semiaxisSmall, int x, int y,
                        Color color)
         {
+            Title = "Эллипс";
             Name = name;
             Width = 2 * semiaxisBig;
             Height = 2 * semiaxisSmall;
