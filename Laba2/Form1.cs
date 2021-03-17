@@ -96,6 +96,25 @@ namespace Laba2
             }
         }
 
+        // Обработчик нажатия на кнопку "Удалить"
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Удаление фигуры из списка
+                int index = listBoxFigures.SelectedIndex;
+                figures.RemoveAt(index);
+                listBoxFigures.Items.RemoveAt(index);
+
+                lbError.Text = "";
+            }
+            
+            catch (ArgumentOutOfRangeException)
+            {
+                lbError.Text = "Выберите фигуру";
+            }
+        }
+
         // Обработчик выбора цвета
         private void btnWhite_Click(object sender, EventArgs e)
         {
