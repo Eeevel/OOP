@@ -50,13 +50,13 @@
     <Compile Include="Drawing.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="EquilateralTriangle.cs" />
-    <Compile Include="Factory.cs" />
-    <Compile Include="FactoryCircle.cs" />
-    <Compile Include="FactoryEllipse.cs" />
-    <Compile Include="FactoryEquilateralTriangle.cs" />
-    <Compile Include="FactoryRectangle.cs" />
-    <Compile Include="FactorySquare.cs" />
-    <Compile Include="FactoryTriangle.cs" />
+    <Compile Include="Factories\Factory.cs" />
+    <Compile Include="Factories\FactoryCircle.cs" />
+    <Compile Include="Factories\FactoryEllipse.cs" />
+    <Compile Include="Factories\FactoryEquilateralTriangle.cs" />
+    <Compile Include="Factories\FactoryRectangle.cs" />
+    <Compile Include="Factories\FactorySquare.cs" />
+    <Compile Include="Factories\FactoryTriangle.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
