@@ -44,14 +44,27 @@ namespace Laba2
         // Обработчик нажатия на кнопку "Создать фигуру"
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string name = textBoxFigure.Text;
-            double width = double.Parse(textBoxWidth.Text);
-            double height = double.Parse(textBoxHeight.Text);
-            int x = int.Parse(textBoxX.Text);
-            int y = int.Parse(textBoxY.Text);
+            try
+            {
+                string name = textBoxFigure.Text;
+                double width = double.Parse(textBoxWidth.Text);
+                double height = double.Parse(textBoxHeight.Text);
+                int x = int.Parse(textBoxX.Text);
+                int y = int.Parse(textBoxY.Text);
 
-            Figure figure = figures[name].CreateFigure(name, width, height, x, y, color);
-            figures[name].DrawFigure(this, figure);
+                Figure figure = figures[name].CreateFigure(name, width, height, x, y, color);
+                figures[name].DrawFigure(this, figure);
+
+                lbError.Text = "";
+            }
+            catch(KeyNotFoundException)
+            {
+                lbError.Text = "Неверное название фигуры";
+            }
+            catch
+            {
+                lbError.Text = "Введите корректные данные";
+            } 
         }
 
         // Обработчик выбора цвета
