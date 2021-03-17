@@ -29,6 +29,7 @@ namespace Laba2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -366,6 +367,7 @@ namespace Laba2
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.picture);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Редактор фигур";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -107,8 +107,7 @@ namespace Laba2
                 listBoxFigures.Items.RemoveAt(index);
 
                 lbError.Text = "";
-            }
-            
+            }     
             catch (ArgumentOutOfRangeException)
             {
                 lbError.Text = "Выберите фигуру";
