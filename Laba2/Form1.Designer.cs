@@ -62,6 +62,8 @@ namespace Laba2
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBinarySerialization = new System.Windows.Forms.Button();
             this.btnBinaryDeserialization = new System.Windows.Forms.Button();
+            this.btnJsonSerialization = new System.Windows.Forms.Button();
+            this.btnJsonDeserialization = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +73,7 @@ namespace Laba2
             this.picture.BackColor = System.Drawing.Color.White;
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(604, 595);
+            this.picture.Size = new System.Drawing.Size(604, 627);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
@@ -296,7 +298,7 @@ namespace Laba2
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Location = new System.Drawing.Point(622, 594);
+            this.lbError.Location = new System.Drawing.Point(622, 626);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(0, 13);
             this.lbError.TabIndex = 15;
@@ -375,11 +377,33 @@ namespace Laba2
             this.btnBinaryDeserialization.UseVisualStyleBackColor = true;
             this.btnBinaryDeserialization.Click += new System.EventHandler(this.btnBinaryDeserialization_Click);
             // 
+            // btnJsonSerialization
+            // 
+            this.btnJsonSerialization.Location = new System.Drawing.Point(625, 561);
+            this.btnJsonSerialization.Name = "btnJsonSerialization";
+            this.btnJsonSerialization.Size = new System.Drawing.Size(163, 23);
+            this.btnJsonSerialization.TabIndex = 24;
+            this.btnJsonSerialization.Text = "JSON сериализация";
+            this.btnJsonSerialization.UseVisualStyleBackColor = true;
+            this.btnJsonSerialization.Click += new System.EventHandler(this.btnJsonSerialization_Click);
+            // 
+            // btnJsonDeserialization
+            // 
+            this.btnJsonDeserialization.Location = new System.Drawing.Point(625, 590);
+            this.btnJsonDeserialization.Name = "btnJsonDeserialization";
+            this.btnJsonDeserialization.Size = new System.Drawing.Size(163, 23);
+            this.btnJsonDeserialization.TabIndex = 25;
+            this.btnJsonDeserialization.Text = "JSON десериализация";
+            this.btnJsonDeserialization.UseVisualStyleBackColor = true;
+            this.btnJsonDeserialization.Click += new System.EventHandler(this.btnJsonDeserialization_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 619);
+            this.ClientSize = new System.Drawing.Size(798, 651);
+            this.Controls.Add(this.btnJsonDeserialization);
+            this.Controls.Add(this.btnJsonSerialization);
             this.Controls.Add(this.btnBinaryDeserialization);
             this.Controls.Add(this.btnBinarySerialization);
             this.Controls.Add(this.btnClear);
@@ -447,6 +471,8 @@ namespace Laba2
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBinarySerialization;
         private System.Windows.Forms.Button btnBinaryDeserialization;
+        private System.Windows.Forms.Button btnJsonSerialization;
+        private System.Windows.Forms.Button btnJsonDeserialization;
     }
 }
 

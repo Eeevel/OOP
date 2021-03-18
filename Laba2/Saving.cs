@@ -34,14 +34,19 @@ namespace Laba2
             }
         }
 
-        //public static void Serialization()
+        // JSON сериализация
+        //public static void JsonSerialization((List<Figure> figures)
         //{
-
+        //    using (FileStream fileStream = new FileStream("BinaryFigures.dat", FileMode.OpenOrCreate))
+        //    {
+        //        JsonSerializer.Serialize(fileStream, figures);
+        //    }
         //}
 
-        //public static void Serialization()
-        //{
+        // JSON десериализация
+        public static void JsonDeserialization()
+        {
 
-        //}
+        }
     }
 }

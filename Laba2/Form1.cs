@@ -141,5 +141,17 @@ namespace Laba2
                 listBoxFigures.Items.Add(figure.Name);
             }
         }
+
+        // Обработчик нажатия на кнопку "JSON сериализация"
+        private void btnJsonSerialization_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Обработчик нажатия на кнопку "JSON десериализация"
+        private void btnJsonDeserialization_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
