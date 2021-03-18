@@ -59,6 +59,7 @@ namespace Laba2
             this.btnDraw = new System.Windows.Forms.Button();
             this.listBoxFigures = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@ namespace Laba2
             this.picture.BackColor = System.Drawing.Color.White;
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(604, 478);
+            this.picture.Size = new System.Drawing.Size(604, 515);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
@@ -293,7 +294,7 @@ namespace Laba2
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Location = new System.Drawing.Point(622, 477);
+            this.lbError.Location = new System.Drawing.Point(622, 514);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(0, 13);
             this.lbError.TabIndex = 15;
@@ -327,14 +328,14 @@ namespace Laba2
             // listBoxFigures
             // 
             this.listBoxFigures.FormattingEnabled = true;
-            this.listBoxFigures.Location = new System.Drawing.Point(682, 373);
+            this.listBoxFigures.Location = new System.Drawing.Point(682, 401);
             this.listBoxFigures.Name = "listBoxFigures";
             this.listBoxFigures.Size = new System.Drawing.Size(106, 95);
             this.listBoxFigures.TabIndex = 19;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(682, 344);
+            this.btnDelete.Location = new System.Drawing.Point(682, 372);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 23);
             this.btnDelete.TabIndex = 20;
@@ -342,11 +343,22 @@ namespace Laba2
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(682, 343);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(106, 23);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "Очистить";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 502);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.listBoxFigures);
             this.Controls.Add(this.btnDraw);
@@ -408,6 +420,7 @@ namespace Laba2
         private System.Windows.Forms.Button btnDraw;
         private System.Windows.Forms.ListBox listBoxFigures;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

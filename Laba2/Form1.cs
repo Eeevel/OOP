@@ -111,6 +111,12 @@ namespace Laba2
             }
         }
 
+        // Обработчик нажатия на кнопку "Очистить"
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Drawing.Clear(this);
+        }
+
         // Обработчик выбора цвета
         private void btnWhite_Click(object sender, EventArgs e)
         {

@@ -96,5 +96,16 @@ namespace Laba2
 
             form.GetPictureBox().Image = bmp;
         }
+        
+        // Очистка экрана
+        public static void Clear(MainForm form)
+        {
+            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
+            Graphics graph = Graphics.FromImage(bmp);
+
+            graph.Clear(Color.White);
+
+            form.GetPictureBox().Image = bmp;
+        }
     }
 }
