@@ -62,9 +62,6 @@ namespace Laba2
                 // Добавление фигуры в список и отображение на экран
                 figures.Add(figure);
                 listBoxFigures.Items.Add(figure.Name);
-                
-
-                //factories[title].DrawFigure(this, figures[figures.Count - 1]);
 
                 lbError.Text = "";
             }
