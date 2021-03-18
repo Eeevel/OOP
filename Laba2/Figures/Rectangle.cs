@@ -6,6 +6,7 @@ using System.Drawing;
 namespace Laba2
 {
     // Производный класс прямоугольника
+    [Serializable]
     class Rectangle : Figure
     {
         public Rectangle() { }

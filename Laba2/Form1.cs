@@ -123,5 +123,23 @@ namespace Laba2
         {
             color = ((Button)sender).BackColor;
         }
+
+        // Обработчик нажатия на кнопку "Бинарная сериализация"
+        private void btnBinarySerialization_Click(object sender, EventArgs e)
+        {
+            Saving.BinarySerialization(figures);
+        }
+
+        // Обработчик нажатия на кнопку "Бинарная десериализация"
+        private void btnBinaryDeserialization_Click(object sender, EventArgs e)
+        {
+            figures.AddRange(Saving.BinaryDeserialization());
+
+            listBoxFigures.Items.Clear();
+            foreach (Figure figure in figures)
+            {
+                listBoxFigures.Items.Add(figure.Name);
+            }
+        }
     }
 }

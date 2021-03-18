@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace Laba2
 {
+    [Serializable]
     class Ellipse : Figure
     {
         public double SemiaxisBig { get; set; }

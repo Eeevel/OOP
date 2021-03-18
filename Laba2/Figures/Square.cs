@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace Laba2
 {
+    [Serializable]
     class Square : Rectangle
     {
         public Square(string name, double side, int x, int y, Color color)

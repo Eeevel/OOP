@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace Laba2
 {
+    [Serializable]
     class Circle : Ellipse
     {
         public Circle(string name, double radius, 

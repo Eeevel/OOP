@@ -6,6 +6,7 @@ using System.Drawing;
 namespace Laba2
 {
     // Абстрактный класс фигуры
+    [Serializable]
     abstract class Figure
     {
         public string Title { get; set; }

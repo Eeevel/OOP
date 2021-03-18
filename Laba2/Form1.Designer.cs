@@ -60,6 +60,8 @@ namespace Laba2
             this.listBoxFigures = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnBinarySerialization = new System.Windows.Forms.Button();
+            this.btnBinaryDeserialization = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,16 +71,16 @@ namespace Laba2
             this.picture.BackColor = System.Drawing.Color.White;
             this.picture.Location = new System.Drawing.Point(12, 12);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(604, 515);
+            this.picture.Size = new System.Drawing.Size(604, 595);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCreate.Location = new System.Drawing.Point(682, 283);
+            this.btnCreate.Location = new System.Drawing.Point(625, 283);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(106, 25);
+            this.btnCreate.Size = new System.Drawing.Size(163, 25);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Создать фигуру";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -294,7 +296,7 @@ namespace Laba2
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Location = new System.Drawing.Point(622, 514);
+            this.lbError.Location = new System.Drawing.Point(622, 594);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(0, 13);
             this.lbError.TabIndex = 15;
@@ -317,9 +319,9 @@ namespace Laba2
             // 
             // btnDraw
             // 
-            this.btnDraw.Location = new System.Drawing.Point(682, 314);
+            this.btnDraw.Location = new System.Drawing.Point(625, 314);
             this.btnDraw.Name = "btnDraw";
-            this.btnDraw.Size = new System.Drawing.Size(106, 23);
+            this.btnDraw.Size = new System.Drawing.Size(163, 23);
             this.btnDraw.TabIndex = 18;
             this.btnDraw.Text = "Нарисовать";
             this.btnDraw.UseVisualStyleBackColor = true;
@@ -328,16 +330,16 @@ namespace Laba2
             // listBoxFigures
             // 
             this.listBoxFigures.FormattingEnabled = true;
-            this.listBoxFigures.Location = new System.Drawing.Point(682, 401);
+            this.listBoxFigures.Location = new System.Drawing.Point(625, 401);
             this.listBoxFigures.Name = "listBoxFigures";
-            this.listBoxFigures.Size = new System.Drawing.Size(106, 95);
+            this.listBoxFigures.Size = new System.Drawing.Size(163, 95);
             this.listBoxFigures.TabIndex = 19;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(682, 372);
+            this.btnDelete.Location = new System.Drawing.Point(625, 372);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(106, 23);
+            this.btnDelete.Size = new System.Drawing.Size(163, 23);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -345,19 +347,41 @@ namespace Laba2
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(682, 343);
+            this.btnClear.Location = new System.Drawing.Point(625, 343);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(106, 23);
+            this.btnClear.Size = new System.Drawing.Size(163, 23);
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Очистить";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnBinarySerialization
+            // 
+            this.btnBinarySerialization.Location = new System.Drawing.Point(625, 502);
+            this.btnBinarySerialization.Name = "btnBinarySerialization";
+            this.btnBinarySerialization.Size = new System.Drawing.Size(163, 23);
+            this.btnBinarySerialization.TabIndex = 22;
+            this.btnBinarySerialization.Text = "Бинарная сериализация";
+            this.btnBinarySerialization.UseVisualStyleBackColor = true;
+            this.btnBinarySerialization.Click += new System.EventHandler(this.btnBinarySerialization_Click);
+            // 
+            // btnBinaryDeserialization
+            // 
+            this.btnBinaryDeserialization.Location = new System.Drawing.Point(625, 531);
+            this.btnBinaryDeserialization.Name = "btnBinaryDeserialization";
+            this.btnBinaryDeserialization.Size = new System.Drawing.Size(163, 23);
+            this.btnBinaryDeserialization.TabIndex = 23;
+            this.btnBinaryDeserialization.Text = "Бинарная десериализация";
+            this.btnBinaryDeserialization.UseVisualStyleBackColor = true;
+            this.btnBinaryDeserialization.Click += new System.EventHandler(this.btnBinaryDeserialization_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.ClientSize = new System.Drawing.Size(798, 619);
+            this.Controls.Add(this.btnBinaryDeserialization);
+            this.Controls.Add(this.btnBinarySerialization);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.listBoxFigures);
@@ -421,6 +445,8 @@ namespace Laba2
         private System.Windows.Forms.ListBox listBoxFigures;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnBinarySerialization;
+        private System.Windows.Forms.Button btnBinaryDeserialization;
     }
 }
 
