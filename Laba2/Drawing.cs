@@ -10,11 +10,19 @@ namespace Laba2
     // Класс для рисования фигур
     static class Drawing
     {
+        private static Bitmap bmp;
+        private static Graphics graph;
+
+        // Создание области для рисования
+        public static void Initialize(MainForm form)
+        {
+            bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
+            graph = Graphics.FromImage(bmp);
+        }
+
         // Рисование прямоугольника
         public static void Rectangle(MainForm form, Figure figure)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Black);
             SolidBrush brush = new SolidBrush(figure.Color);
 
@@ -29,8 +37,6 @@ namespace Laba2
         // Рисование квадрата
         public static void Square(MainForm form, Figure figure)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Black);
             SolidBrush brush = new SolidBrush(figure.Color);
 
@@ -45,8 +51,6 @@ namespace Laba2
         // Рисование эллипса
         public static void Ellipse(MainForm form, Figure figure)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Black);
             SolidBrush brush = new SolidBrush(figure.Color);
 
@@ -61,8 +65,6 @@ namespace Laba2
         // Рисование круга
         public static void Circle(MainForm form, Figure figure)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Black);
             SolidBrush brush = new SolidBrush(figure.Color);
 
@@ -77,8 +79,6 @@ namespace Laba2
         // Рисование треугольника
         public static void Triangle(MainForm form, Figure figure)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Black);
             SolidBrush brush = new SolidBrush(figure.Color);
 
@@ -100,11 +100,7 @@ namespace Laba2
         // Очистка экрана
         public static void Clear(MainForm form)
         {
-            Bitmap bmp = new Bitmap(form.GetPictureBox().Width, form.GetPictureBox().Height);
-            Graphics graph = Graphics.FromImage(bmp);
-
             graph.Clear(Color.White);
-
             form.GetPictureBox().Image = bmp;
         }
     }

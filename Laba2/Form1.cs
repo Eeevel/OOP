@@ -31,6 +31,7 @@ namespace Laba2
         public MainForm()
         {
             InitializeComponent();
+            Drawing.Initialize(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
