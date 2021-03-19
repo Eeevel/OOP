@@ -6,12 +6,12 @@ using System.Drawing;
 namespace Laba2
 {
     [Serializable]
-    class Ellipse : Figure
+    public class Ellipse : Figure
     {
         public double SemiaxisBig { get; set; }
         public double SemiaxisSmall { get; set; }
 
-        protected Ellipse() { }
+        public Ellipse() { }
         public Ellipse(string name, double semiaxisBig, 
                        double semiaxisSmall, int x, int y,
                        Color color)

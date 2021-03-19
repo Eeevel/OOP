@@ -6,8 +6,9 @@ using System.Drawing;
 namespace Laba2
 {
     [Serializable]
-    class EquilateralTriangle : Triangle
+    public class EquilateralTriangle : Triangle
     {
+        private EquilateralTriangle() { }
         public EquilateralTriangle(string name, double side)
         {
             Title = "Равносторонний треугольник";

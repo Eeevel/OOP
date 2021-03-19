@@ -62,8 +62,8 @@ namespace Laba2
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBinarySerialization = new System.Windows.Forms.Button();
             this.btnBinaryDeserialization = new System.Windows.Forms.Button();
-            this.btnJsonSerialization = new System.Windows.Forms.Button();
-            this.btnJsonDeserialization = new System.Windows.Forms.Button();
+            this.btnXmlSerialization = new System.Windows.Forms.Button();
+            this.btnXmlDeserialization = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -377,33 +377,33 @@ namespace Laba2
             this.btnBinaryDeserialization.UseVisualStyleBackColor = true;
             this.btnBinaryDeserialization.Click += new System.EventHandler(this.btnBinaryDeserialization_Click);
             // 
-            // btnJsonSerialization
+            // btnXmlSerialization
             // 
-            this.btnJsonSerialization.Location = new System.Drawing.Point(625, 561);
-            this.btnJsonSerialization.Name = "btnJsonSerialization";
-            this.btnJsonSerialization.Size = new System.Drawing.Size(163, 23);
-            this.btnJsonSerialization.TabIndex = 24;
-            this.btnJsonSerialization.Text = "JSON сериализация";
-            this.btnJsonSerialization.UseVisualStyleBackColor = true;
-            this.btnJsonSerialization.Click += new System.EventHandler(this.btnJsonSerialization_Click);
+            this.btnXmlSerialization.Location = new System.Drawing.Point(625, 561);
+            this.btnXmlSerialization.Name = "btnXmlSerialization";
+            this.btnXmlSerialization.Size = new System.Drawing.Size(163, 23);
+            this.btnXmlSerialization.TabIndex = 24;
+            this.btnXmlSerialization.Text = "XML сериализация";
+            this.btnXmlSerialization.UseVisualStyleBackColor = true;
+            this.btnXmlSerialization.Click += new System.EventHandler(this.btnXmlSerialization_Click);
             // 
-            // btnJsonDeserialization
+            // btnXmlDeserialization
             // 
-            this.btnJsonDeserialization.Location = new System.Drawing.Point(625, 590);
-            this.btnJsonDeserialization.Name = "btnJsonDeserialization";
-            this.btnJsonDeserialization.Size = new System.Drawing.Size(163, 23);
-            this.btnJsonDeserialization.TabIndex = 25;
-            this.btnJsonDeserialization.Text = "JSON десериализация";
-            this.btnJsonDeserialization.UseVisualStyleBackColor = true;
-            this.btnJsonDeserialization.Click += new System.EventHandler(this.btnJsonDeserialization_Click);
+            this.btnXmlDeserialization.Location = new System.Drawing.Point(625, 590);
+            this.btnXmlDeserialization.Name = "btnXmlDeserialization";
+            this.btnXmlDeserialization.Size = new System.Drawing.Size(163, 23);
+            this.btnXmlDeserialization.TabIndex = 25;
+            this.btnXmlDeserialization.Text = "XML десериализация";
+            this.btnXmlDeserialization.UseVisualStyleBackColor = true;
+            this.btnXmlDeserialization.Click += new System.EventHandler(this.btnXmlDeserialization_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 651);
-            this.Controls.Add(this.btnJsonDeserialization);
-            this.Controls.Add(this.btnJsonSerialization);
+            this.Controls.Add(this.btnXmlDeserialization);
+            this.Controls.Add(this.btnXmlSerialization);
             this.Controls.Add(this.btnBinaryDeserialization);
             this.Controls.Add(this.btnBinarySerialization);
             this.Controls.Add(this.btnClear);
@@ -471,8 +471,8 @@ namespace Laba2
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBinarySerialization;
         private System.Windows.Forms.Button btnBinaryDeserialization;
-        private System.Windows.Forms.Button btnJsonSerialization;
-        private System.Windows.Forms.Button btnJsonDeserialization;
+        private System.Windows.Forms.Button btnXmlSerialization;
+        private System.Windows.Forms.Button btnXmlDeserialization;
     }
 }
 

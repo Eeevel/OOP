@@ -6,7 +6,7 @@ using System.Drawing;
 namespace Laba2
 {
     [Serializable]
-    class Triangle : Figure
+    public class Triangle : Figure
     {
         public double Side1 { get; set; }
         public double Side2 { get; set; }

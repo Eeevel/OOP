@@ -7,7 +7,7 @@ namespace Laba2
 {
     // Производный класс прямоугольника
     [Serializable]
-    class Rectangle : Figure
+    public class Rectangle : Figure
     {
         public Rectangle() { }
         public Rectangle(string name, double width, double height, 

@@ -7,7 +7,7 @@ namespace Laba2
 {
     // Абстрактный класс фигуры
     [Serializable]
-    abstract class Figure
+    public abstract class Figure
     {
         public string Title { get; set; }
         public string Name { get; set; }
@@ -16,6 +16,7 @@ namespace Laba2
         public int X { get; set; }
         public int Y { get; set; }
         public Color Color { get; set; }
+        public int Argb { get; set; }
 
         // Абстрактный метод для нахождения периметра
         public abstract double Perimeter();

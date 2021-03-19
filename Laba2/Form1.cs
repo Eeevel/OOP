@@ -142,16 +142,22 @@ namespace Laba2
             }
         }
 
-        // Обработчик нажатия на кнопку "JSON сериализация"
-        private void btnJsonSerialization_Click(object sender, EventArgs e)
+        // Обработчик нажатия на кнопку "XML сериализация"
+        private void btnXmlSerialization_Click(object sender, EventArgs e)
         {
-
+            Saving.XmlSerialization(figures);
         }
 
-        // Обработчик нажатия на кнопку "JSON десериализация"
-        private void btnJsonDeserialization_Click(object sender, EventArgs e)
+        // Обработчик нажатия на кнопку "XML десериализация"
+        private void btnXmlDeserialization_Click(object sender, EventArgs e)
         {
+            figures.AddRange(Saving.XmlDeserialization());
 
+            listBoxFigures.Items.Clear();
+            foreach (Figure figure in figures)
+            {
+                listBoxFigures.Items.Add(figure.Name);
+            }
         }
     }
 }
