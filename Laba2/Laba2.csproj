@@ -151,11 +151,5 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DrawingLibrary\DrawingLibrary.csproj">
-      <Project>{1258c8f8-8cf7-4c08-a785-b2cf240d0cec}</Project>
-      <Name>DrawingLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
