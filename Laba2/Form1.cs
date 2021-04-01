@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 using PluginInterface;
 
 namespace Laba2
@@ -29,15 +31,50 @@ namespace Laba2
         // Список для хранения фигур
         List<Figure> figures = new List<Figure>();
 
+        // Список расширений
+        private List<IPlugin> plugins = new List<IPlugin>();
+
+        // Путь к папке с плагинами
+        private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Plugins");
+
         public MainForm()
         {
             InitializeComponent();
             Drawing.Initialize(this);
+            RefreshPlugins();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RefreshPlugins()
+        {
+            plugins.Clear();
+
+            DirectoryInfo pluginDirectory = new DirectoryInfo(pluginPath);
+            if (!pluginDirectory.Exists)
+                pluginDirectory.Create();
+
+            // Выбираем из директории все файлы с расширением .dll      
+            var pluginFiles = Directory.GetFiles(pluginPath, "*.dll");
+            foreach (var file in pluginFiles)
+            {
+                // Загружаем сборку
+                Assembly asm = Assembly.LoadFrom(file);
+                // Ищем типы, реализующие интерфейс IPlugin
+                var types = asm.GetTypes().
+                                Where(t => t.GetInterfaces().
+                                Where(i => i.FullName == typeof(IPlugin).FullName).Any());
+
+                // Заполняем экземплярами полученных типов коллекцию плагинов
+                foreach (var type in types)
+                {
+                    var plugin = asm.CreateInstance(type.FullName) as IPlugin;
+                    plugins.Add(plugin);
+                }
+            }
         }
 
         // Возвращает ссылку на поле для рисования
