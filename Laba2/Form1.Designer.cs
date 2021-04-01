@@ -64,6 +64,10 @@ namespace Laba2
             this.btnBinaryDeserialization = new System.Windows.Forms.Button();
             this.btnXmlSerialization = new System.Windows.Forms.Button();
             this.btnXmlDeserialization = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listBoxPlugins = new System.Windows.Forms.ListBox();
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.lbCalculate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -397,11 +401,50 @@ namespace Laba2
             this.btnXmlDeserialization.UseVisualStyleBackColor = true;
             this.btnXmlDeserialization.Click += new System.EventHandler(this.btnXmlDeserialization_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(809, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Плагины";
+            // 
+            // listBoxPlugins
+            // 
+            this.listBoxPlugins.FormattingEnabled = true;
+            this.listBoxPlugins.Location = new System.Drawing.Point(812, 37);
+            this.listBoxPlugins.Name = "listBoxPlugins";
+            this.listBoxPlugins.Size = new System.Drawing.Size(151, 95);
+            this.listBoxPlugins.TabIndex = 27;
+            // 
+            // btnCalculate
+            // 
+            this.btnCalculate.Location = new System.Drawing.Point(812, 140);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(151, 23);
+            this.btnCalculate.TabIndex = 28;
+            this.btnCalculate.Text = "Вычислить";
+            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            // 
+            // lbCalculate
+            // 
+            this.lbCalculate.AutoSize = true;
+            this.lbCalculate.Location = new System.Drawing.Point(809, 170);
+            this.lbCalculate.Name = "lbCalculate";
+            this.lbCalculate.Size = new System.Drawing.Size(0, 13);
+            this.lbCalculate.TabIndex = 29;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 651);
+            this.ClientSize = new System.Drawing.Size(975, 651);
+            this.Controls.Add(this.lbCalculate);
+            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.listBoxPlugins);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnXmlDeserialization);
             this.Controls.Add(this.btnXmlSerialization);
             this.Controls.Add(this.btnBinaryDeserialization);
@@ -473,6 +516,10 @@ namespace Laba2
         private System.Windows.Forms.Button btnBinaryDeserialization;
         private System.Windows.Forms.Button btnXmlSerialization;
         private System.Windows.Forms.Button btnXmlDeserialization;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox listBoxPlugins;
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label lbCalculate;
     }
 }
 

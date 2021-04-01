@@ -9,6 +9,7 @@ namespace PluginInterface
 {
     public interface IPlugin
     {
+        string Name { get; set; }
         string Calculate(Figure figure);
     }
 }

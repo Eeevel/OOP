@@ -51,30 +51,39 @@ namespace Laba2
 
         private void RefreshPlugins()
         {
-            plugins.Clear();
-
-            DirectoryInfo pluginDirectory = new DirectoryInfo(pluginPath);
-            if (!pluginDirectory.Exists)
-                pluginDirectory.Create();
-
-            // Выбираем из директории все файлы с расширением .dll      
-            var pluginFiles = Directory.GetFiles(pluginPath, "*.dll");
-            foreach (var file in pluginFiles)
+            try
             {
-                // Загружаем сборку
-                Assembly asm = Assembly.LoadFrom(file);
-                // Ищем типы, реализующие интерфейс IPlugin
-                var types = asm.GetTypes().
-                                Where(t => t.GetInterfaces().
-                                Where(i => i.FullName == typeof(IPlugin).FullName).Any());
+                plugins.Clear();
 
-                // Заполняем экземплярами полученных типов коллекцию плагинов
-                foreach (var type in types)
+                DirectoryInfo pluginDirectory = new DirectoryInfo(pluginPath);
+                if (!pluginDirectory.Exists)
+                    pluginDirectory.Create();
+
+                // Выбираем из директории все файлы с расширением .dll      
+                var pluginFiles = Directory.GetFiles(pluginPath, "*.dll");
+                foreach (var file in pluginFiles)
                 {
-                    var plugin = asm.CreateInstance(type.FullName) as IPlugin;
-                    plugins.Add(plugin);
+                    // Загружаем сборку
+                    Assembly asm = Assembly.LoadFrom(file);
+                    // Ищем типы, реализующие интерфейс IPlugin
+                    var types = asm.GetTypes().
+                                    Where(t => t.GetInterfaces().
+                                    Where(i => i.FullName == typeof(IPlugin).FullName).Any());
+
+                    // Заполняем экземплярами полученных типов коллекцию плагинов
+                    foreach (var type in types)
+                    {
+                        var plugin = asm.CreateInstance(type.FullName) as IPlugin;
+                        plugins.Add(plugin);
+                        listBoxPlugins.Items.Add(plugin.Name);
+                    }
                 }
             }
+            catch
+            {
+                lbCalculate.Text = "Ошибка при загрузке плагина";
+            }
+            
         }
 
         // Возвращает ссылку на поле для рисования
@@ -196,6 +205,24 @@ namespace Laba2
             {
                 listBoxFigures.Items.Add(figure.Name);
             }
+        }
+
+        // Обработчик нажатия на кнопку "Вычислить"
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int pluginIndex = listBoxPlugins.SelectedIndex;
+                int figureIndex = listBoxFigures.SelectedIndex;
+                Figure figure = figures[figureIndex];
+
+                lbCalculate.Text = plugins[pluginIndex].Calculate(figure);
+            }
+            catch
+            {
+                lbCalculate.Text = "Что-то пошло не так";
+            }
+            
         }
     }
 }
