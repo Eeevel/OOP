@@ -11,7 +11,7 @@ namespace PluginArea
     public class AreaSearch : IPlugin
     {
         public string Name { get; set; } = "Вычисление площади";
-    public string Calculate(Figure figure)
+        public string Calculate(Figure figure)
         {
             string result;
 
