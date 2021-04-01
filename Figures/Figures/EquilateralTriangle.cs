@@ -25,6 +25,9 @@ namespace Laba2
             X = x;
             Y = y;
             Color = color;
+            Side1 = width;
+            Side2 = Side1;
+            Side3 = Side2;
         }
             
 

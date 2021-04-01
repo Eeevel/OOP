@@ -31,6 +31,9 @@ namespace Laba2
             X = x;
             Y = y;
             Color = color;
+            Side1 = width;
+            Side2 = Math.Sqrt((height * height) + (width * width / 4));
+            Side3 = Side2;
         }
 
         // Переопределение нахождения периметра
