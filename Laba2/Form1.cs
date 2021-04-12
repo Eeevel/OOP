@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using PluginInterface;
+using ProcessingInterface;
 
 namespace Laba2
 {

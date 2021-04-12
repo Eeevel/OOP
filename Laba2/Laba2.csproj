@@ -150,6 +150,10 @@
       <Project>{72db9077-70ef-40dc-a8f3-f3e57366895c}</Project>
       <Name>PluginInterface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProcessingInterface\ProcessingInterface.csproj">
+      <Project>{47d96b1f-a550-48e3-9576-f0c08865e276}</Project>
+      <Name>ProcessingInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
