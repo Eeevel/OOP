@@ -17,7 +17,7 @@ namespace Laba2
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream("BinaryFigures.dat", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\BinaryFigures.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fileStream, figures);
             }
@@ -28,7 +28,7 @@ namespace Laba2
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream("BinaryFigures.dat", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\BinaryFigures.dat", FileMode.OpenOrCreate))
             {
                 List<Figure> figures = (List<Figure>)formatter.Deserialize(fileStream);
                 return figures;
@@ -48,7 +48,7 @@ namespace Laba2
                 figure.Argb = figure.Color.ToArgb();
             }
 
-            using (FileStream fileStream = new FileStream("XmlFigures.xml", FileMode.Create))
+            using (FileStream fileStream = new FileStream("Files\\XmlFigures.xml", FileMode.Create))
             {
                 formatter.Serialize(fileStream, figures);
             }
@@ -62,7 +62,7 @@ namespace Laba2
                                                         typeof(Square), typeof(Triangle),
                                                         typeof(EquilateralTriangle)});
 
-            using (FileStream fileStream = new FileStream("XmlFigures.xml", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\XmlFigures.xml", FileMode.OpenOrCreate))
             {
                 List<Figure> figures = (List<Figure>)formatter.Deserialize(fileStream);
 

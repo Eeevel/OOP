@@ -17,14 +17,14 @@ namespace ProcessingEncryption
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream("BinaryFigures3.txt", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\EncryptedFigures.txt", FileMode.OpenOrCreate))
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
                     formatter.Serialize(memoryStream, figures);
                     string str = Convert.ToBase64String(memoryStream.ToArray());
 
-                    //шифрование
+                    //Шифрование
                     str = Encrypt(str, 3);
 
                     byte[] buffer = Encoding.Default.GetBytes(str);
@@ -38,14 +38,14 @@ namespace ProcessingEncryption
             BinaryFormatter formatter = new BinaryFormatter();
 
             string str;
-            using (FileStream fileStream = new FileStream("BinaryFigures3.txt", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\EncryptedFigures.txt", FileMode.OpenOrCreate))
             {
                 byte[] buffer = new byte[fileStream.Length];
                 fileStream.Read(buffer, 0, buffer.Length);
                 str = Encoding.Default.GetString(buffer);
             }
 
-            // расшифровка
+            // Расшифровка
             str = Decrypt(str, 3);
 
             byte[] bytes = Convert.FromBase64String(str);

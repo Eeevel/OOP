@@ -72,6 +72,7 @@ namespace Laba2
             this.btnSerialization = new System.Windows.Forms.Button();
             this.btnDeserialization = new System.Windows.Forms.Button();
             this.lbPluginError = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -473,15 +474,24 @@ namespace Laba2
             this.lbPluginError.AutoSize = true;
             this.lbPluginError.Location = new System.Drawing.Point(809, 566);
             this.lbPluginError.Name = "lbPluginError";
-            this.lbPluginError.Size = new System.Drawing.Size(35, 13);
+            this.lbPluginError.Size = new System.Drawing.Size(0, 13);
             this.lbPluginError.TabIndex = 33;
-            this.lbPluginError.Text = "label9";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(809, 377);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 13);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Плагины для сериализации:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 651);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lbPluginError);
             this.Controls.Add(this.btnDeserialization);
             this.Controls.Add(this.btnSerialization);
@@ -569,6 +579,7 @@ namespace Laba2
         private System.Windows.Forms.Button btnSerialization;
         private System.Windows.Forms.Button btnDeserialization;
         private System.Windows.Forms.Label lbPluginError;
+        private System.Windows.Forms.Label label9;
     }
 }
 
