@@ -68,6 +68,10 @@ namespace Laba2
             this.listBoxPlugins = new System.Windows.Forms.ListBox();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.lbCalculate = new System.Windows.Forms.Label();
+            this.listBoxSerPlugins = new System.Windows.Forms.ListBox();
+            this.btnSerialization = new System.Windows.Forms.Button();
+            this.btnDeserialization = new System.Windows.Forms.Button();
+            this.lbPluginError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -436,11 +440,52 @@ namespace Laba2
             this.lbCalculate.Size = new System.Drawing.Size(0, 13);
             this.lbCalculate.TabIndex = 29;
             // 
+            // listBoxSerPlugins
+            // 
+            this.listBoxSerPlugins.FormattingEnabled = true;
+            this.listBoxSerPlugins.Location = new System.Drawing.Point(812, 401);
+            this.listBoxSerPlugins.Name = "listBoxSerPlugins";
+            this.listBoxSerPlugins.Size = new System.Drawing.Size(151, 95);
+            this.listBoxSerPlugins.TabIndex = 30;
+            // 
+            // btnSerialization
+            // 
+            this.btnSerialization.Location = new System.Drawing.Point(812, 502);
+            this.btnSerialization.Name = "btnSerialization";
+            this.btnSerialization.Size = new System.Drawing.Size(151, 23);
+            this.btnSerialization.TabIndex = 31;
+            this.btnSerialization.Text = "Сериализация";
+            this.btnSerialization.UseVisualStyleBackColor = true;
+            this.btnSerialization.Click += new System.EventHandler(this.btnSerialization_Click);
+            // 
+            // btnDeserialization
+            // 
+            this.btnDeserialization.Location = new System.Drawing.Point(812, 531);
+            this.btnDeserialization.Name = "btnDeserialization";
+            this.btnDeserialization.Size = new System.Drawing.Size(151, 23);
+            this.btnDeserialization.TabIndex = 32;
+            this.btnDeserialization.Text = "Десериализация";
+            this.btnDeserialization.UseVisualStyleBackColor = true;
+            this.btnDeserialization.Click += new System.EventHandler(this.btnDeserialization_Click);
+            // 
+            // lbPluginError
+            // 
+            this.lbPluginError.AutoSize = true;
+            this.lbPluginError.Location = new System.Drawing.Point(809, 566);
+            this.lbPluginError.Name = "lbPluginError";
+            this.lbPluginError.Size = new System.Drawing.Size(35, 13);
+            this.lbPluginError.TabIndex = 33;
+            this.lbPluginError.Text = "label9";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 651);
+            this.Controls.Add(this.lbPluginError);
+            this.Controls.Add(this.btnDeserialization);
+            this.Controls.Add(this.btnSerialization);
+            this.Controls.Add(this.listBoxSerPlugins);
             this.Controls.Add(this.lbCalculate);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.listBoxPlugins);
@@ -520,6 +565,10 @@ namespace Laba2
         private System.Windows.Forms.ListBox listBoxPlugins;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.Label lbCalculate;
+        private System.Windows.Forms.ListBox listBoxSerPlugins;
+        private System.Windows.Forms.Button btnSerialization;
+        private System.Windows.Forms.Button btnDeserialization;
+        private System.Windows.Forms.Label lbPluginError;
     }
 }
 

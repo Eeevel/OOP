@@ -38,11 +38,18 @@ namespace Laba2
         // Путь к папке с плагинами
         private readonly string pluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Plugins");
 
+        // Список расширений для сериализации
+        private List<IProcessing> serializationPlugins = new List<IProcessing>();
+
+        // Путь к папке с плагинами для сериализации
+        private readonly string serializationPluginPath = Path.Combine(Directory.GetCurrentDirectory(), "Serialization plugins");
+
         public MainForm()
         {
             InitializeComponent();
             Drawing.Initialize(this);
             RefreshPlugins();
+            RefreshSerializationPlugins();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,6 +92,43 @@ namespace Laba2
                 lbCalculate.Text = "Ошибка при загрузке плагина";
             }
             
+        }
+
+        private void RefreshSerializationPlugins()
+        {
+            try
+            {
+                serializationPlugins.Clear();
+
+                DirectoryInfo pluginDirectory = new DirectoryInfo(serializationPluginPath);
+                if (!pluginDirectory.Exists)
+                    pluginDirectory.Create();
+
+                // Выбираем из директории все файлы с расширением .dll      
+                var pluginFiles = Directory.GetFiles(serializationPluginPath, "*.dll");
+                foreach (var file in pluginFiles)
+                {
+                    // Загружаем сборку
+                    Assembly asm = Assembly.LoadFrom(file);
+                    // Ищем типы, реализующие интерфейс IProcessing
+                    var types = asm.GetTypes().
+                                    Where(t => t.GetInterfaces().
+                                    Where(i => i.FullName == typeof(IProcessing).FullName).Any());
+
+                    // Заполняем экземплярами полученных типов коллекцию плагинов
+                    foreach (var type in types)
+                    {
+                        var plugin = asm.CreateInstance(type.FullName) as IProcessing;
+                        serializationPlugins.Add(plugin);
+                        listBoxSerPlugins.Items.Add(plugin.Name);
+                    }
+                }
+            }
+            catch
+            {
+                lbPluginError.Text = "Ошибка при загрузке плагина";
+            }
+
         }
 
         // Возвращает ссылку на поле для рисования
@@ -224,6 +268,42 @@ namespace Laba2
                 lbCalculate.Text = "Что-то пошло не так";
             }
             
+        }
+
+        // Обработчик нажатия на кнопку "Сериализация"
+        private void btnSerialization_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int pluginIndex = listBoxSerPlugins.SelectedIndex;
+
+                serializationPlugins[pluginIndex].Transform(figures);
+            }
+            catch
+            {
+                lbPluginError.Text = "Что-то пошло не так";
+            }
+        }
+
+        // Обработчик нажатия на кнопку "Десериализация"
+        private void btnDeserialization_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int pluginIndex = listBoxSerPlugins.SelectedIndex;
+
+                figures.AddRange(serializationPlugins[pluginIndex].Restore());
+
+                listBoxFigures.Items.Clear();
+                foreach (Figure figure in figures)
+                {
+                    listBoxFigures.Items.Add(figure.Name);
+                }
+            }
+            catch
+            {
+                lbPluginError.Text = "Что-то пошло не так";
+            }
         }
     }
 }
