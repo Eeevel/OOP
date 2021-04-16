@@ -28,8 +28,8 @@ namespace ProcessingXmlTransformatiom
 
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(xmlString);
-            string jsonString = JsonConvert.SerializeXmlNode(xmlDocument);
 
+            string jsonString = JsonConvert.SerializeXmlNode(xmlDocument);
             using (FileStream fileStream = new FileStream("Files\\JsonFigures.json", FileMode.OpenOrCreate))
             {
                 byte[] buffer = Encoding.Default.GetBytes(jsonString);

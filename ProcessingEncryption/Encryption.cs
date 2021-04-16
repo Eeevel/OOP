@@ -24,7 +24,7 @@ namespace ProcessingEncryption
                     formatter.Serialize(memoryStream, figures);
                     string str = Convert.ToBase64String(memoryStream.ToArray());
 
-                    //Шифрование
+                    // Шифрование
                     str = Encrypt(str, 3);
 
                     byte[] buffer = Encoding.Default.GetBytes(str);
