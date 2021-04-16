@@ -38,8 +38,8 @@ namespace Laba2
         // XML сериализация
         public static void XmlSerialization(List<Figure> figures)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Figure>), new[] { typeof(Circle), 
-                                                        typeof(Ellipse), typeof(Rectangle), 
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Figure>), new[] { typeof(Circle),
+                                                        typeof(Ellipse), typeof(Rectangle),
                                                         typeof(Square), typeof(Triangle),
                                                         typeof(EquilateralTriangle)});
 

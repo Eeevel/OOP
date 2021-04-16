@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingInterface", "Proc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingEncryption", "ProcessingEncryption\ProcessingEncryption.csproj", "{ECD74FC6-A558-4AE0-932E-E0BD804DFF5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingXmlTransformatiom", "ProcessingXmlTransformatiom\ProcessingXmlTransformatiom.csproj", "{E39210B6-3613-43EE-973D-EA580A9BE7B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{ECD74FC6-A558-4AE0-932E-E0BD804DFF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD74FC6-A558-4AE0-932E-E0BD804DFF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD74FC6-A558-4AE0-932E-E0BD804DFF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E39210B6-3613-43EE-973D-EA580A9BE7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E39210B6-3613-43EE-973D-EA580A9BE7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E39210B6-3613-43EE-973D-EA580A9BE7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E39210B6-3613-43EE-973D-EA580A9BE7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

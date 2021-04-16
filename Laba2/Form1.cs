@@ -273,6 +273,7 @@ namespace Laba2
         // Обработчик нажатия на кнопку "Сериализация"
         private void btnSerialization_Click(object sender, EventArgs e)
         {
+            lbPluginError.Text = "";
             try
             {
                 int pluginIndex = listBoxSerPlugins.SelectedIndex;
@@ -288,6 +289,7 @@ namespace Laba2
         // Обработчик нажатия на кнопку "Десериализация"
         private void btnDeserialization_Click(object sender, EventArgs e)
         {
+            lbPluginError.Text = "";
             try
             {
                 int pluginIndex = listBoxSerPlugins.SelectedIndex;

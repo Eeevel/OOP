@@ -49,11 +49,11 @@ namespace ProcessingEncryption
             str = Decrypt(str, 3);
 
             byte[] bytes = Convert.FromBase64String(str);
-            using (MemoryStream ms = new MemoryStream(bytes, 0, bytes.Length))
+            using (MemoryStream memoryStream = new MemoryStream(bytes, 0, bytes.Length))
             {
-                ms.Write(bytes, 0, bytes.Length);
-                ms.Position = 0;
-                List<Figure> figures = (List<Figure>)formatter.Deserialize(ms);
+                memoryStream.Write(bytes, 0, bytes.Length);
+                memoryStream.Position = 0;
+                List<Figure> figures = (List<Figure>)formatter.Deserialize(memoryStream);
                 return figures;
             }
         }
