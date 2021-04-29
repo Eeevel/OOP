@@ -11,7 +11,7 @@ namespace Encryption
 {
     public class ColumnEncryption
     {
-        public string Name { get; set; } = "Шифрование столбцовым методом";
+        public string Name { get; set; } = "Шифрование столбцами";
 
         public void Save(List<Figure> figures, string filePath) 
         {

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using PluginInterface;
 using ProcessingInterface;
+using Encryption;
 
 namespace Laba2
 {
@@ -50,11 +51,21 @@ namespace Laba2
             Drawing.Initialize(this);
             RefreshPlugins();
             RefreshSerializationPlugins();
+            LoadingAdapter();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadingAdapter()
+        {
+            ColumnEncryption encryptor = new ColumnEncryption();
+            IProcessing adapter = new Adapter(encryptor);
+
+            serializationPlugins.Add(adapter);
+            listBoxSerPlugins.Items.Add(adapter.Name);
         }
 
         private void RefreshPlugins()
