@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter.cs" />
     <Compile Include="Drawing.cs" />
     <Compile Include="Factories\Factory.cs" />
     <Compile Include="Factories\FactoryCircle.cs" />
@@ -145,6 +146,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Encryption\Encryption.csproj">
+      <Project>{99aa521d-ffb3-48eb-ac59-f5daec3c337e}</Project>
+      <Name>Encryption</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Figures\Figures.csproj">
       <Project>{9d17165c-f244-49d1-b12d-e4bbc74feb44}</Project>
       <Name>Figures</Name>

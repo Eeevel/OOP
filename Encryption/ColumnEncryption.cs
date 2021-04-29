@@ -13,11 +13,11 @@ namespace Encryption
     {
         public string Name { get; set; } = "Шифрование столбцовым методом";
 
-        public void Save(List<Figure> figures) 
+        public void Save(List<Figure> figures, string filePath) 
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream("Files\\ColumnEncryptedFigures.txt", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
@@ -33,12 +33,12 @@ namespace Encryption
             }
         }
 
-        public List<Figure> Load()
+        public List<Figure> Load(string filePath)
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
             string str;
-            using (FileStream fileStream = new FileStream("Files\\ColumnEncryptedFigures.txt", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 byte[] buffer = new byte[fileStream.Length];
                 fileStream.Read(buffer, 0, buffer.Length);
