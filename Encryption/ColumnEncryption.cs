@@ -15,7 +15,7 @@ namespace Encryption
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream(filePath, FileMode.Create))
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {

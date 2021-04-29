@@ -17,7 +17,7 @@ namespace ProcessingEncryption
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream fileStream = new FileStream("Files\\EncryptedFigures.txt", FileMode.OpenOrCreate))
+            using (FileStream fileStream = new FileStream("Files\\EncryptedFigures.txt", FileMode.Create))
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
